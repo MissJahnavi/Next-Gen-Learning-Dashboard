@@ -6,7 +6,8 @@ export async function getCourses(): Promise<{
   error: string | null;
 }> {
   try {
-    const supabase = await createClient();
+    const supabase = createClient(); 
+
     const { data, error } = await supabase
       .from("courses")
       .select("*")
